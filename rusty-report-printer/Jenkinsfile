@@ -19,7 +19,7 @@ pipeline {
                       memory: 256Mi
                     limits:
                       cpu: 2
-                      memory: 256Mi
+                      memory: 500Mi
                 - name: node
                   image: node:19.0.0-alpine3.15
                   command: ["sleep", "infinity"]

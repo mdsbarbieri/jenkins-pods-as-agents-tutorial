@@ -6,7 +6,7 @@ import groovy.transform.Field
 pipeline {
     agent {
         kubernetes {
-            inheritFrom 'node18'
+            inheritFrom 'node16'
             defaultContainer 'rust'
             yamlMergeStrategy merge()
             yaml '''
@@ -39,7 +39,7 @@ pipeline {
         stage('Generate Report') {
             steps {
                 dir(PROJECT_DIR) {
-                    container('node18'){
+                    container('node16'){
                         sh './report_generator.js'
                     }
                 }
